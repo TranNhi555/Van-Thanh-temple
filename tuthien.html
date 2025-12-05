@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ thiện - Chùa Văn Thánh</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7f7f7;
+        }
+
+        header {
+            background: #dea218;
+            padding: 15px;
+            color: #fff;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #ffb917;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+        }
+
+        /* BÀI VIẾT */
+        .post {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        .post h3 {
+            margin: 0;
+            color: #b30000;
+            cursor: pointer;
+        }
+
+        .post img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 10px;
+            cursor: zoom-in;
+        }
+
+        /* NÚT */
+        .toggle-btn {
+            margin-top: 10px;
+            background: #b30000;
+            color: #fff;
+            padding: 7px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 15px;
+        }
+
+        /* PHẦN BỊ THU GỌN */
+        .post-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* NĂM */
+        .year-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 3px solid #b30000;
+        }
+        .year-title {
+            font-size: 24px;
+            color: #6e1515;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* PHÓNG TO ẢNH */
+        #imgModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+        }
+        #imgModal img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 5% auto;
+            display: block;
+            border-radius: 10px;
+            animation: zoomIn .3s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            background: #ab0404;
+            color: #fff;
+            flex-wrap: wrap;
+        }
+        footer .info, footer .map {
+            width: 45%;
+        }
+        footer iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+        }
+        .copyright {
+            text-align: center;
+            padding: 12px;
+            background: #6e0202;
+            color: #fff;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>CHÙA VĂN THÁNH</header>
+
+<nav>
+  <a href="index.html">Trang chủ</a>
+  <a href="tintuc.html">Tin tức</a>
+  <a href="phapthoai.html">Pháp thoại</a>
+  <a href="tuthien.html">Từ thiện</a>
+  <a href="lichsu.html">Lịch sử</a>
+  <a href="cungduong.html">Cúng dường</a>
+  <a href="kinhsach.html">Kinh sách</a>
+  <a href="phongsanh.html">Phóng sanh</a>
+</nav>
+
+<section class="content">
+    <h2>Hoạt động Từ thiện</h2>
+
+    <div id="post-list">
+
+        <!--  BÀI 1 -->
+        <article class="post" data-year="2025">
+            <h3 onclick="togglePost(this)">Tiêu đề bài từ thiện</h3>
+
+            <div class="post-content">
+                <p class="date"></p>
+                <p>Mô tả nội dung bài từ thiện…</p>
+                <img src="hinh_tu_thien.jpg" onclick="zoomImage(this.src)">
+            </div>
+        </article>
+
+        <!--  BÀI 2 -->
+        <article class="post" data-year="2025">
+            <h3 onclick="togglePost(this)">CHÙA VĂN THÁNH SAN SẺ 900 PHẦN QUÀ YÊU THƯƠNG ĐẾN BÀ CON BỊ ẢNH HƯỞNG CƠN BÃO SỐ 13 VÀ LŨ LỤT Ở Bình Định</h3>
+
+            <div class="post-content">
+                <h4>Ngày đăng: 28/11/2025</h4>
+
+                <p>Sáng ngày 27-11-2025 (nhằm ngày 8 tháng 10 năm Ất Tỵ), đoàn thiện nguyện chùa Văn Thánh (TP. Hồ Chí Minh) và Ni viện Tuệ Quang (Lâm  Đồng) và quý mạnh thường quân do Đại đức Thích Thị Nhân làm trưởng đoàn đã thực hiện chuyến thăm và trao tặng nhu yếu phẩm đến các Tự viện trực thuộc tỉnh Gia Lai (Bình Định cũ) và một số địa phương chịu thiệt hại nặng nề do cơn bão số 13 và lũ lụt vừa qua.</p>
+                <p>Trong không khí ấm áp nghĩa tình, đoàn đã đến thăm và trao 600 phần quà đến bà con tại các điểm: chùa Thanh Long, chùa Phú Thọ (Quy Nhơn Tây), chùa Minh Lộc (Quy Nhơn Bắc). Mỗi phần quà trị giá 500.000 đồng, bao gồm tiền mặt và các nhu yếu phẩm thiết yếu nhằm hỗ trợ bà con vượt qua khó khăn sau bão lụt.</p>
+                <p>Chiều cùng ngày, đoàn tiếp tục di chuyển đến các xã Tuy Phước Đông và xã Tuy Phước Bắc để thăm hỏi, động viên và trao quà đến những hộ dân bị ảnh hưởng nặng. Đoàn đã trao tặng hơn 300 phần quà tại các địa điểm trên. Tại mỗi nơi đoàn đến, bà con đều bày tỏ sự xúc động trước tấm lòng chia sẻ kịp thời của quý chư Tôn đức và mạnh thường quân.</p>
+                <p>Chuyến thiện nguyện không chỉ mang đến những phần quà vật chất mà còn gửi gắm yêu thương, sự quan tâm và tinh thần tương thân tương ái đến bà con vùng bão lụt. Đây cũng là dịp kết nối những tấm lòng nhân ái, góp phần xoa dịu phần nào mất mát và tiếp thêm nghị lực để người dân ổn định cuộc sống sau thiên tai.</p>
+
+                <img src="591737332_1370081728027440_1743378915225824840_n.jpg" onclick="zoomImage(this.src)">
+                <img src="590066202_1370081794694100_3700554758802878183_n.jpg" onclick="zoomImage(this.src)">
+                <img src="588222789_1370082144694065_5620766783451674624_n.jpg" onclick="zoomImage(this.src)">
+                <img src="589967003_1370082154694064_907115139820435_n.jpg" onclick="zoomImage(this.src)">
+            </div>
+        </article>
+
+        <!--  BÀI 2023 -->
+        <article class="post" data-year="2023">
+            <h3 onclick="togglePost(this)">Chùa Văn Thánh bàn giao 8 giếng nước tại Ấn Độ</h3>
+
+            <div class="post-content">
+                <h4>Ngày đăng: 01/04/2023</h4>
+                <p><a href="https://phatsuonline.vn/chua-van-thanh-ban-giao-8-gieng-nuoc-cho-ba-con-an-do" target="_blank">Nhấn để xem bài đầy đủ</a></p>
+            </div>
+        </article>
+
+        <!--  BÀI 2022 -->
+        <article class="post" data-year="2022">
+            <h3 onclick="togglePost(this)">Chùa Văn Thánh khánh thành cầu tại Bến Tre</h3>
+
+            <div class="post-content">
+                <h4>Ngày đăng: 05/10/2022</h4>
+                <p><a href="https://giacngo.vn/chua-van-thanh-ban-giao-cau-be-tong-nong-thon-tai-ben-tre-post64111.html" target="_blank">Nhấn để xem bài đầy đủ</a></p>
+            </div>
+        </article>
+
+        <article class="post" data-year="2022">
+            <h3 onclick="togglePost(this)">Chùa Văn Thánh khánh thành cầu huyện Lai Vung</h3>
+
+            <div class="post-content">
+                <h4>Ngày đăng: 27/05/2022</h4>
+                <p><a href="https://giacngo.vn/chua-van-thanh-khanh-thanh-cau-be-tong-nong-thon-tai-huyen-lai-vung-post63033.html" target="_blank">Nhấn để xem bài đầy đủ</a></p>
+            </div>
+        </article>
+
+        <!--  BÀI 2021 -->
+        <article class="post" data-year="2021">
+            <h3 onclick="togglePost(this)">Chùa Văn Thánh trao quà Tết</h3>
+
+            <div class="post-content">
+                <h4>Ngày đăng: 03/02/2021</h4>
+                <p><a href="https://giacngo.vn/chua-van-thanh-khanh-thanh-cau-doan-tu-thien-trao-qua-tet-post54793.html" target="_blank">Nhấn để xem bài đầy đủ</a></p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- POPUP ẢNH -->
+<div id="imgModal" onclick="this.style.display='none'">
+    <img id="imgModalContent">
+</div>
+
+<script>
+function zoomImage(src) {
+    document.getElementById("imgModalContent").src = src;
+    document.getElementById("imgModal").style.display = "block";
+}
+
+/* THU GỌN / MỞ RỘNG BÀI */
+function togglePost(titleElement) {
+    const post = titleElement.parentElement;
+    const content = post.querySelector(".post-content");
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
+
+/* TỰ TẠO NGÀY CHO BÀI MẪU */
+document.querySelectorAll(".date").forEach(d => {
+    d.textContent = "Ngày đăng: " + new Date().toLocaleDateString("vi-VN");
+});
+</script>
+
+<footer>
+  <div class="info">
+    <h3>Thông tin liên hệ</h3>
+    <p><strong>Chùa Văn Thánh</strong></p>
+    <p>Địa chỉ: 115/9 Ngô Tất Tố, Phường 22, Bình Thạnh, TP. HCM</p>
+    <p>Điện thoại: 090 123 4567</p>
+    <p>Email: chuavanthanh@gmail.com</p>
+  </div>
+
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1351231444825!2d106.7114204!3d10.7922914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528adb82ddc1d%3A0xbf752c80ada39a74!2zQ2jDuWEgVsOibiBUaMOgbmg!5e0!3m2!1svi!2s!4v1700000000000" 
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</footer>
+
+<div class="copyright">
+  © 2025 Chùa Văn Thánh — Bản quyền thuộc về Trần Nhi.
+</div>
+
+</body>
+</html>
+

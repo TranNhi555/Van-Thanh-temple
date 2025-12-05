@@ -1,0 +1,315 @@
+<style> 
+    body { 
+        margin: 0; 
+        font-family: Arial;
+        background: #f8f8f8;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: #d4ab62;   /* màu vàng nhạt */
+        color: white;
+        padding: 15px;
+        font-size: 26px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* ===== MENU ===== */
+    nav {
+        background: #c78925;   /* màu vàng nâu */
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .content {
+        width: 90%;
+        max-width: 900px;
+        margin: 25px auto;
+    }
+
+    /* Khung bài */
+    .post {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 25px;
+        background: #fafafa;
+        border-radius: 8px;
+    }
+    .post img {
+        width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-top: 10px;
+        cursor: zoom-in;
+    }
+    .post h3 {
+        margin-top: 0;
+        color: #b30000;
+    }
+    .post h4 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* Nhóm bài theo năm */
+    .year-section {
+        margin-top: 40px;
+        padding-top: 25px;
+        border-top: 3px solid #b30000;
+    }
+    .year-title {
+        font-size: 24px;
+        color: #b30000;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    /*  Nút xem thêm bài  */
+    #loadMore {
+        display: block;
+        margin: 25px auto;
+        padding: 10px 20px;
+        background: #b30000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+        border-radius: 6px;
+    }
+
+    /*  Thu gọn nội dung bài  */
+    .content-wrapper {
+        max-height: 130px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .content-wrapper.expanded {
+        max-height: 2000px;
+    }
+
+    .toggle-btn {
+        margin-top: 10px;
+        background: #b30000;
+        color: white;
+        padding: 7px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /*  POPUP PHÓNG TO ẢNH  */
+    #imgModal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.85);
+    }
+    #imgModal img {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 5% auto;
+        display: block;
+        border-radius: 10px;
+        animation: zoomIn .3s ease;
+    }
+    @keyframes zoomIn {
+        from { transform: scale(0.7); opacity: 0; }
+        to   { transform: scale(1);   opacity: 1; }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        background: #9f0202ee;   /* màu vàng nâu */
+        color: white;
+    }
+
+    footer .info,
+    footer .map {
+        width: 48%;
+    }
+
+    footer iframe {
+        width: 100%;
+        height: 200px;
+        border: 0;
+    }
+
+    .copyright {
+        text-align: center;
+        background: #6b0101;   /* cùng màu footer */
+        padding: 10px;
+        color: rgb(255, 250, 250);
+        font-weight: bold;
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>CHÙA VĂN THÁNH</header>
+
+<nav>
+  <a href="index.html">Trang chủ</a>
+  <a href="tintuc.html">Tin tức</a>
+  <a href="phapthoai.html">Pháp thoại</a>
+  <a href="tuthien.html">Từ thiện</a>
+  <a href="lichsu.html">Lịch sử</a>
+  <a href="cungduong.html">Cúng dường</a>
+  <a href="kinhsach.html">Kinh sách</a>
+  <a href="phongsanh.html">Phóng sanh</a>
+</nav>
+
+<section class="content">
+    <h2>Phóng Sanh Định Kỳ</h2>
+
+    <!-- ============================ -->
+    <!--   DANH SÁCH BÀI VIẾT         -->
+    <!-- ============================ -->
+    <div id="post-list">
+
+        <!-- Bài mẫu -->
+        <article class="post" data-year="2025">
+            <h3>Phóng sanh định kỳ</h3>
+            <h4>Ngày đăng: 20/11/2025</h4>
+
+            <div class="content-wrapper collapsed">
+                <p>Ngày 1/10 ẤT TỴ</p>
+                <img src="ps1.jpg" onclick="zoomImage(this.src)">
+                <img src="ps2.jpg" onclick="zoomImage(this.src)">
+                <img src="ps3.jpg" onclick="zoomImage(this.src)">
+                <img src="ps 4.jpg" onclick="zoomImage(this.src)">
+                <img src="ps5.jpg" onclick="zoomImage(this.src)">
+            </div>
+
+            <button class="toggle-btn">Xem thêm</button>
+        </article>
+
+        <!-- Bạn sẽ đăng thêm bài mới ở đây -->
+
+    </div>
+
+    <button id="loadMore">Xem thêm bài</button>
+</section>
+
+<!-- =========================== -->
+<!--  POPUP ẢNH  -->
+<!-- =========================== -->
+<div id="imgModal" onclick="this.style.display='none'">
+    <img id="imgModalContent">
+</div>
+
+<script>
+function zoomImage(src) {
+    document.getElementById("imgModalContent").src = src;
+    document.getElementById("imgModal").style.display = "block";
+}
+</script>
+
+<!-- ================================ -->
+<!--  SCRIPT: nhóm theo năm + load   -->
+<!-- ================================ -->
+<script>
+    const list = document.getElementById("post-list");
+    const posts = [...list.querySelectorAll(".post")];
+
+    /* Sắp xếp bài theo năm (mới nhất lên đầu) */
+    posts.sort((a, b) => b.dataset.year - a.dataset.year);
+
+    /* Tách năm */
+    const years = [...new Set(posts.map(p => p.dataset.year))].sort((a, b) => b - a);
+
+    list.innerHTML = "";
+
+    years.forEach(year => {
+        let sec = document.createElement("div");
+        sec.className = "year-section";
+        sec.innerHTML = `<div class="year-title">Năm ${year}</div>`;
+        posts.filter(p => p.dataset.year === year).forEach(p => sec.appendChild(p));
+        list.appendChild(sec);
+    });
+
+    /* Hiển thị 3 bài đầu tiên, bấm xem thêm để mở */
+    const allPosts = document.querySelectorAll(".post");
+    let visible = 3;
+
+    function show() {
+        allPosts.forEach((p, i) => p.style.display = i < visible ? "block" : "none");
+        if (visible >= allPosts.length) document.getElementById("loadMore").style.display = "none";
+    }
+    show();
+
+    document.getElementById("loadMore").onclick = () => {
+        visible += 3;
+        show();
+    };
+</script>
+
+<!-- ====================================== -->
+<!--  THU GỌN / MỞ RỘNG NỘI DUNG BÀI  -->
+<!-- ====================================== -->
+<script>
+document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.onclick = function () {
+        let box = this.previousElementSibling;
+
+        if (box.classList.contains("collapsed")) {
+            box.classList.remove("collapsed");
+            box.classList.add("expanded");
+            this.innerText = "Thu gọn";
+        } else {
+            box.classList.add("collapsed");
+            box.classList.remove("expanded");
+            this.innerText = "Xem thêm";
+        }
+    };
+});
+</script>
+
+<footer>
+  <div class="info">
+    <h3>Thông tin liên hệ</h3>
+    <p><strong>Chùa Văn Thánh</strong></p>
+    <p>Địa chỉ: 115/9 Ngô Tất Tố, Phường 22, Bình Thạnh, TP. HCM</p>
+    <p>Điện thoại: 090 123 4567</p>
+    <p>Email: chuavanthanh@gmail.com</p>
+  </div>
+
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1351231444825!2d106.7114204!3d10.7922914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528adb82ddc1d%3A0xbf752c80ada39a74!2zQ2jDuWEgVsOibiBUaMOgbmg!5e0!3m2!1svi!2s!4v1700000000000" 
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</footer>
+
+<div class="copyright">
+  © 2025 Chùa Văn Thánh — Bản quyền thuộc về Trần Nhi.
+</div>
+
+</body>
+</html>
+
+
