@@ -7,9 +7,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f7f7f7;
-        }
+            margin: 0; 
+            background: #f7f7f7; 
+
+            /* ✨ THÊM 3 DÒNG NÀY */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        } 
 
         header {
             background: #dea218;
@@ -36,6 +41,9 @@
             width: 90%;
             max-width: 900px;
             margin: 25px auto;
+
+            /* ✨ THÊM 1 DÒNG NÀY ĐỂ ĐẨY FOOTER XUỐNG */
+            flex: 1;
         }
 
         /* BÀI VIẾT */
@@ -290,4 +298,3 @@ document.querySelectorAll(".date").forEach(d => {
 
 </body>
 </html>
-

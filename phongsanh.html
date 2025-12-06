@@ -1,15 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Phóng sanh</title>
+
 <style> 
     body { 
         margin: 0; 
         font-family: Arial;
         background: #f8f8f8;
+
+        /* ====== THÊM MỚI để footer luôn nằm dưới ====== */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     /* ===== HEADER ===== */
     header {
-        background: #d4ab62;   /* màu vàng nhạt */
-        color: white;
-        padding: 15px;
+        background: #d4ab62;
+        color: white; 
+        padding: 15px; 
         font-size: 26px;
         text-align: center;
         font-weight: bold;
@@ -17,7 +28,7 @@
 
     /* ===== MENU ===== */
     nav {
-        background: #c78925;   /* màu vàng nâu */
+        background: #c78925;
         padding: 15px;
         text-align: center;
     }
@@ -141,8 +152,11 @@
         display: flex;
         justify-content: space-between;
         padding: 25px;
-        background: #9f0202ee;   /* màu vàng nâu */
+        background: #9f0202ee;
         color: white;
+
+        /* ====== THÊM MỚI ====== */
+        margin-top: auto; 
     }
 
     footer .info,
@@ -158,7 +172,7 @@
 
     .copyright {
         text-align: center;
-        background: #6b0101;   /* cùng màu footer */
+        background: #6b0101;
         padding: 10px;
         color: rgb(255, 250, 250);
         font-weight: bold;
@@ -185,12 +199,8 @@
 <section class="content">
     <h2>Phóng Sanh Định Kỳ</h2>
 
-    <!-- ============================ -->
-    <!--   DANH SÁCH BÀI VIẾT         -->
-    <!-- ============================ -->
     <div id="post-list">
 
-        <!-- Bài mẫu -->
         <article class="post" data-year="2025">
             <h3>Phóng sanh định kỳ</h3>
             <h4>Ngày đăng: 20/11/2025</h4>
@@ -207,16 +217,11 @@
             <button class="toggle-btn">Xem thêm</button>
         </article>
 
-        <!-- Bạn sẽ đăng thêm bài mới ở đây -->
-
     </div>
 
     <button id="loadMore">Xem thêm bài</button>
 </section>
 
-<!-- =========================== -->
-<!--  POPUP ẢNH  -->
-<!-- =========================== -->
 <div id="imgModal" onclick="this.style.display='none'">
     <img id="imgModalContent">
 </div>
@@ -228,17 +233,12 @@ function zoomImage(src) {
 }
 </script>
 
-<!-- ================================ -->
-<!--  SCRIPT: nhóm theo năm + load   -->
-<!-- ================================ -->
 <script>
     const list = document.getElementById("post-list");
     const posts = [...list.querySelectorAll(".post")];
 
-    /* Sắp xếp bài theo năm (mới nhất lên đầu) */
     posts.sort((a, b) => b.dataset.year - a.dataset.year);
 
-    /* Tách năm */
     const years = [...new Set(posts.map(p => p.dataset.year))].sort((a, b) => b - a);
 
     list.innerHTML = "";
@@ -251,7 +251,6 @@ function zoomImage(src) {
         list.appendChild(sec);
     });
 
-    /* Hiển thị 3 bài đầu tiên, bấm xem thêm để mở */
     const allPosts = document.querySelectorAll(".post");
     let visible = 3;
 
@@ -267,9 +266,6 @@ function zoomImage(src) {
     };
 </script>
 
-<!-- ====================================== -->
-<!--  THU GỌN / MỞ RỘNG NỘI DUNG BÀI  -->
-<!-- ====================================== -->
 <script>
 document.querySelectorAll(".toggle-btn").forEach(btn => {
     btn.onclick = function () {
@@ -311,5 +307,3 @@ document.querySelectorAll(".toggle-btn").forEach(btn => {
 
 </body>
 </html>
-
-
