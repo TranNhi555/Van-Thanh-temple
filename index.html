@@ -2,17 +2,32 @@
 <html lang="vi">
 
 <head>
-  <meta charset="utf-8">
-  <title>Chùa Văn Thánh — Trang chủ</title>
+  <meta charset="utf-8"> 
+  <title>Chùa Văn Thánh — Trang chủ</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
+  <style> 
+    /* GIÚP FOOTER LUÔN Ở CUỐI TRANG */ 
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
     /* BACKGROUND CHÌM */
     body.bg-image {
       background: url("backrogue.jpg") center/cover no-repeat fixed;
     }
 
-    /* Lớp phủ mờ */
     body.bg-image::before {
       content: "";
       position: fixed;
@@ -24,7 +39,7 @@
     /* HEADER */
     header {
       text-align: center;
-      background: #c89520;
+      background: #d6a10f;
       color: white;
       padding: 20px 0;
       font-size: 32px;
@@ -55,23 +70,35 @@
       background: #f3e8dd;
     }
 
-    /* KHUNG CHÍNH */
+    /* MAIN */
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
 
+    /* SẮP XẾP 7 MỤC THEO 4 - 2 - 1 */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr); /* hàng đầu 4 cái */
       gap: 20px;
       padding: 20px 0;
     }
 
-    /* CÁC KHỐI NỔI BẬT */
+    /* Hàng thứ hai 2 cái */
+    .features .feature-card:nth-child(5),
+    .features .feature-card:nth-child(6) {
+      grid-column: span 2;
+    }
+
+    /* Hàng cuối 1 cái giữa */
+    .features .feature-card:nth-child(7) {
+      grid-column: 2 / span 2; /* căn giữa */
+    }
+
+    /* BOX */
     .feature-card {
-      border: 1px solid #dcb36b;   /* viền xám nhạt */
+      border: 1px solid #877717;
       border-radius: 12px;
       background: white;
       padding: 18px;
@@ -88,14 +115,14 @@
       display: inline-block;
       margin-top: 10px;
       padding: 6px 12px;
-      background: #c1a204;
+      background: #8b5a2b;
       color: white;
       border-radius: 5px;
       text-decoration: none;
     }
 
     .feature-card a:hover {
-      background: #9f0101;
+      background: #a06a38;
     }
 
     /* FOOTER */
@@ -103,7 +130,7 @@
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      background: #ca1919;
+      background: #8b5a2b;
       color: white;
       flex-wrap: wrap;
     }
@@ -123,8 +150,28 @@
     .copyright {
       text-align: center;
       padding: 10px;
-      background: #8a0000;
+      background: #633f1f;
       color: white;
+    }
+
+    @media(max-width: 900px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features .feature-card:nth-child(7) {
+        grid-column: span 2;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .features .feature-card:nth-child(5),
+      .features .feature-card:nth-child(6),
+      .features .feature-card:nth-child(7) {
+        grid-column: span 1;
+      }
     }
 
     @media(max-width: 800px) {
@@ -221,8 +268,7 @@
     <div class="map">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1351231444825!2d106.7114204!3d10.7922914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528adb82ddc1d%3A0xbf752c80ada39a74!2zQ2jDuWEgVsOibiBUaMOgbmg!5e0!3m2!1svi!2s!4v1700000000000"
-        allowfullscreen="" loading="lazy">
-      </iframe>
+        allowfullscreen="" loading="lazy"></iframe>
     </div>
   </footer>
 
