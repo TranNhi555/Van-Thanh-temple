@@ -2,15 +2,16 @@
 <html lang="vi">
 
 <head>
-  <meta charset="utf-8"> 
-  <title>Chùa Văn Thánh — Trang chủ</title> 
+  <meta charset="utf-8">
+  <title>Chùa Văn Thánh — Trang chủ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style> 
-    /* GIÚP FOOTER LUÔN Ở CUỐI TRANG */ 
-    html, body {
-      height: 100%;
-      margin: 0;
+  <style>
+
+    /* GIÚP FOOTER LUÔN Ở CUỐI TRANG */
+    html, body { 
+      height: 100%; 
+      margin: 0; 
       padding: 0;
     }
 
@@ -42,8 +43,21 @@
       background: #d6a10f;
       color: white;
       padding: 20px 0;
-      font-size: 32px;
+      font-size: 45px;
       font-weight: bold;
+    }
+
+    /* BÁNH XE PHÁP LUÂN */
+    .wheel {
+      width: 100px;
+      vertical-align: middle;
+      margin-right: 10px;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
     }
 
     /* MENU */
@@ -77,33 +91,46 @@
       padding: 20px;
     }
 
-    /* SẮP XẾP 7 MỤC THEO 4 - 2 - 1 */
+    /* LƯỚI 7 MỤC */
     .features {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* hàng đầu 4 cái */
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       padding: 20px 0;
     }
 
-    /* Hàng thứ hai 2 cái */
     .features .feature-card:nth-child(5),
     .features .feature-card:nth-child(6) {
       grid-column: span 2;
     }
 
-    /* Hàng cuối 1 cái giữa */
     .features .feature-card:nth-child(7) {
-      grid-column: 2 / span 2; /* căn giữa */
+      grid-column: 2 / span 2;
     }
 
-    /* BOX */
+    /* CÁC CỤC NỔI */
     .feature-card {
-      border: 1px solid #877717;
+      border: 1px solid #d3d3d3;
       border-radius: 12px;
       background: white;
       padding: 18px;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+
+      /* hiệu ứng trượt ban đầu */
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.7s ease-out forwards;
+
+      /* ⭐ hiệu ứng nổi */
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    /* ⭐ HOVER — SỬA LỖI KHÔNG LÀM BIẾN MẤT */
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.22);
     }
 
     .feature-card h3 {
@@ -130,7 +157,7 @@
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      background: #c91010;
+      background: #b00505;
       color: white;
       flex-wrap: wrap;
     }
@@ -154,6 +181,7 @@
       color: white;
     }
 
+    /* RESPONSIVE */
     @media(max-width: 900px) {
       .features {
         grid-template-columns: repeat(2, 1fr);
@@ -179,19 +207,33 @@
         flex-direction: column;
         text-align: center;
       }
+
       footer .info {
         max-width: 100%;
       }
+
       footer iframe {
         width: 100%;
       }
     }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 
 <body class="bg-image">
 
-  <header>CHÙA VĂN THÁNH</header>
+  <!-- ⭐ BÁNH XE PHÁP LUÂN GIỮ NGUYÊN NƠI CŨ ⭐ -->
+  <header>
+    <img src="phapluan.png" class="wheel" alt="phapluan">
+    CHÙA VĂN THÁNH
+  </header>
 
   <nav>
     <a href="index.html">Trang chủ</a>
